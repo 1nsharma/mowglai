@@ -110,6 +110,9 @@
 		"react-helmet-async": {
 			"react": "$react",
 			"react-dom": "$react-dom"
+		},
+		"@google/model-viewer": {
+			"three": "$three"
 		}
 	}
 }
