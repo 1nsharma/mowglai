@@ -193,13 +193,13 @@ export default function HomeContent() {
 
   useGSAP(() => {
     // Scroll Velocity Skew Effect
-    let proxy = { skew: 0 },
+    const proxy = { skew: 0 },
       skewSetter = gsap.quickSetter(".skew-container", "skewY", "deg"),
       clamp = gsap.utils.clamp(-5, 5); // Limit the maximum skew to 5 degrees
 
     ScrollTrigger.create({
       onUpdate: (self) => {
-        let skew = clamp(self.getVelocity() / -300);
+        const skew = clamp(self.getVelocity() / -300);
         if (Math.abs(skew) > Math.abs(proxy.skew)) {
           proxy.skew = skew;
           gsap.to(proxy, {

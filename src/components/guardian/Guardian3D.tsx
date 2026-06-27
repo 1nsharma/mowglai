@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 
 import { useEffect, useState } from "react";
@@ -33,7 +32,6 @@ export default function Guardian3D() {
         {/* Glow effect behind the model */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
 
-        {/* @ts-ignore */}
         <model-viewer
           src="/assets/lion.glb"
           alt="Mowglai 3D Guardian Asset"
