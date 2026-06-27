@@ -43,3 +43,7 @@ tc.txt
 
 public/.htaccess
 out/.htaccess
+.vercel
+
+# Antigravity agents
+.agents/
