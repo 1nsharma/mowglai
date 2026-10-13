@@ -32,7 +32,7 @@ jobs:
         run: bun test packages/core-contracts/src/index.test.ts
 
       - name: Test unified AI core
-        run: bun test packages/ai-core/src/index.test.ts
+        run: bun test packages/ai-core/src
 
       - name: Lint
         run: bun run lint
