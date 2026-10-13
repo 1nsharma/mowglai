@@ -22,7 +22,8 @@ The retrieved blueprint declares 56 projects, but explicitly names 47. The other
 ## Shared platform boundaries
 
 - `packages/core-contracts`: typed tenant context, domain-event envelope and application-level tenant boundary guard.
-- Planned after source audit: identity/auth adapter, model gateway, MCP/tool registry, billing/usage metering, audit ledger, shared UI, integration adapters, observability and deployment templates.
+- `packages/ai-core` (implemented, not yet execution-verified): bounded request parsing, explicit task allowlist, server-side Gemini model selection, versioned task-specific system instructions, Gemini request/response helpers, and reciprocal-rank fusion over already-fetched keyword/vector/structured result lists.
+- Still missing: verified identity/session adapter, distributed rate limiting and quotas, actual keyword/vector/structured retrieval providers, embeddings, persistent memory, MCP/tool registry and permissioned tool execution, evaluation pipeline, durable audit ledger, usage metering, and production observability.
 - Data plane: PostgreSQL/Supabase is a candidate for shared multi-tenant business data; actual migration is conditional on schema review, RLS policies, backups and per-product requirements.
 - Runtime: do not force all products into one process. Start with a modular monolith for shared business capabilities and preserve isolated workers/services where needed.
 
@@ -42,13 +43,13 @@ A technical monorepo does not automatically transfer IP ownership. Maintain sour
 
 ## First engineering milestone
 
-The initial shared contracts package is intentionally small and framework-neutral. It provides tenant-aware event contracts and a fail-closed tenant comparison helper. It does **not** provide authentication, database RLS, a model gateway, billing, production authorization or complete platform security.
+The initial shared contracts package provides tenant-aware event contracts and a fail-closed application-level tenant comparison helper. The first `packages/ai-core` slice provides bounded request validation, task-aware server-side model routing, prompt-policy versioning and retrieval-result fusion. Retrieval fusion only ranks candidates supplied by adapters; it does not connect to a vector store, search index or database. No persistent memory or tool execution is implemented. The Gemini route fails closed in production because the inspected repository does not yet provide verified user authentication or distributed rate limiting. These modules do **not** constitute complete platform security or a production-ready RAG/agent system.
 
 ## Acceptance criteria for this phase
 
 - [ ] Registry is reconciled against the actual 56 local directories and ZIP contents.
 - [ ] Every source has a recorded hash/commit and provenance.
 - [ ] The 9 currently unnamed entries are resolved from the real inventory.
-- [ ] Shared contract tests run in CI and the exact result is recorded.
+- [ ] Shared contract and AI-core tests run in CI and the exact result is recorded; at the time of this update, tests are written but no workflow run is available as evidence.
 - [ ] No original project or archive is deleted during consolidation.
 - [ ] Product-level migration PRs identify imported paths, licensing, data migrations and rollback steps.
