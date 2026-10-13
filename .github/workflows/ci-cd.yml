@@ -31,6 +31,9 @@ jobs:
       - name: Test shared core contracts
         run: bun test packages/core-contracts/src/index.test.ts
 
+      - name: Test unified AI core
+        run: bun test packages/ai-core/src/index.test.ts
+
       - name: Lint
         run: bun run lint
 
@@ -40,6 +43,7 @@ jobs:
           NEXT_PUBLIC_RAZORPAY_KEY_ID: ${{ secrets.NEXT_PUBLIC_RAZORPAY_KEY_ID }}
 
       - name: Inject Secrets into .htaccess
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.repository_owner == 'Div0011'
         env:
           RAZORPAY_KEY_ID: ${{ secrets.RAZORPAY_KEY_ID }}
           RAZORPAY_KEY_SECRET: ${{ secrets.RAZORPAY_KEY_SECRET }}
