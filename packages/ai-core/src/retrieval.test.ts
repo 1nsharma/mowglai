@@ -62,9 +62,10 @@ describe("hybrid retrieval fusion", () => {
   test("orders equal-score results deterministically by ID", () => {
     const results = fuseHybridResults("tenant-a", {
       ...empty,
-      keyword: [doc("b"), doc("a")],
+      keyword: [doc("b")],
+      vector: [doc("a")],
     }, 10, 60);
-    expect(results.map((x) => x.id)).toEqual(["b", "a"]);
+    expect(results.map((x) => x.id)).toEqual(["a", "b"]);
   });
 
   test("rejects malformed candidates", () => {
