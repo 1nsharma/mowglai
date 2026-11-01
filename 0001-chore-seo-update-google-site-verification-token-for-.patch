@@ -1,0 +1,26 @@
+From 31170c6ab85acffc6518b7a5ecdc408a92a9e800 Mon Sep 17 00:00:00 2001
+From: 1nsharma <1nsharma@users.noreply.github.com>
+Date: Sun, 1 Nov 2026 08:09:22 +0000
+Subject: [PATCH] chore(seo): update google-site-verification token for Search
+ Console ownership (https://mowglai.com/)
+
+---
+ app/layout.tsx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/app/layout.tsx b/app/layout.tsx
+index 92cde4d..4c8547a 100644
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -100,7 +100,7 @@ export const metadata: Metadata = {
+         canonical: "https://mowglai.com",
+     },
+     verification: {
+-        google: "Evz63X8emo75NARUTxWl7zuik4hstQOoYls6MKipByA",
++        google: "3MLnnPXMmJ1XyDvq4Pg8NU7d539HnXlro5bRLijpH98",
+         other: {
+             "razorpay-verification": "YOUR_RAZORPAY_VERIFICATION_KEY",
+             "geo.region": "IN-DL;IN-UP",
+-- 
+2.39.5
+
