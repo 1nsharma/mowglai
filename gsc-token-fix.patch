@@ -1,8 +1,8 @@
-From 31170c6ab85acffc6518b7a5ecdc408a92a9e800 Mon Sep 17 00:00:00 2001
+From a1ee6ebe9f6ff780bc9e000dc7326eda00d5487d Mon Sep 17 00:00:00 2001
 From: 1nsharma <1nsharma@users.noreply.github.com>
-Date: Sun, 1 Nov 2026 08:09:22 +0000
-Subject: [PATCH] chore(seo): update google-site-verification token for Search
- Console ownership (https://mowglai.com/)
+Date: Sun, 1 Nov 2026 08:17:12 +0000
+Subject: [PATCH] chore(seo): update google-site-verification token for GSC
+ ownership (mowglai.com)
 
 ---
  app/layout.tsx | 2 +-
