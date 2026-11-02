@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: "*",
                 allow: "/",
-                disallow: ["/api/", "/_next/", "/private/", "/offline/"],
+                disallow: ["/api/", "/private/", "/offline/"],
             },
             {
                 // Explicitly permit major search and answer-engine crawlers.
@@ -30,7 +30,7 @@ export default function robots(): MetadataRoute.Robots {
                     "CCBot",
                 ],
                 allow: "/",
-                disallow: ["/api/", "/_next/", "/offline/"],
+                disallow: ["/api/", "/offline/"],
             },
             {
                 userAgent: "Googlebot-Image",
