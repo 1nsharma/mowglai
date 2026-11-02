@@ -17,8 +17,8 @@ export default function InteractivePet() {
     const targetRef = useRef<Point>({ x: 180, y: 180 });
     const positionRef = useRef<Point>({ x: 180, y: 180 });
     const frameRef = useRef<number | null>(null);
-    const idleRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-    const messageTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const idleRef = useRef<number | null>(null);
+    const messageTimerRef = useRef<number | null>(null);
     const [mood, setMood] = useState<"curious" | "sleeping" | "happy">("curious");
     const [message, setMessage] = useState("");
     const [messageVisible, setMessageVisible] = useState(false);
