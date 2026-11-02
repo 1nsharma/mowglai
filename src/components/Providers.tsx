@@ -7,6 +7,7 @@ import { CurrencyProvider } from "@/context/CurrencyContext";
 import { NetworkProvider } from "@/context/NetworkContext";
 import NetworkStatusIndicator from "@/components/NetworkStatusIndicator";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
+import InteractivePet from "@/components/InteractivePet";
 
 export function Providers({ children }: { children: React.ReactNode }) {
     // Initialize performance monitoring
@@ -17,6 +18,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             <CurrencyProvider>
                 <TooltipProvider delayDuration={0}>
                     {children}
+                    <InteractivePet />
                     <Toaster />
                     <NetworkStatusIndicator />
                     <ServiceWorkerRegister />
